@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Underground Eye</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/Space.css">
+    <link rel="shortcut icon" href="assets/img/Logo.ico" type="assets/img/png">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="rectangle">
+            <a class="btn_Exit" href="Underground_Eye.html" >  
+                <img src = "assets/img/exit.png">
+            </a>
+            <div class="rectangle_img">
+                <img onclick="soundClick()" src="assets/img/space.jpg" alt="">
+                <div class="rectangle_text">
+                    <div id="example">
+                        <p>Стоїть чисте нічне небо на фоні тиші ви бачите яскраві зірки і у вас у голові лише одна
+                            людина, та дівчина із конем. Може варто піти до неї, може постукати у вікно і мені вдасться
+                            прогулятися із нею??</p>
+
+                    </div>
+                    <a class="btn" href="walking.html">Піти до дівчини</a>
+                    <a class="btn" href="Ranok1.1.html"> Піти спати, адже рано вранці вставати</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+     function soundClick() {
+        var audio = new Audio(); 
+        audio.src ='assets/audio/7.mp3' 
+        audio.volume = 0.6;
+        audio.autoplay = true; 
+        }
+        $(document).ready(function () {
+            $.fn.animate_Text = function () {
+                var string = this.text();
+                return this.each(function () {
+                    var $this = $(this);
+
+                    $this.html(string.replace(/./g, '<span class="new">$&</span>'));
+                    $this.find('span.new').each(function (i, el) {
+                        setTimeout(function () {
+                            $(el).addClass('div_opacity');
+                        }, 40 * i);
+                    });
+                });
+            };
+            $('#example').show();
+            $('#example').animate_Text();
+        });
+    </script>
+</body>
+
+</html>

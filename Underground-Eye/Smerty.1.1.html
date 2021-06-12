@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Underground Eye</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/History_page1.css">
+    <link rel="shortcut icon" href="assets/img/Logo.ico" type="assets/img/png">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+    <div class="content">
+        <div class="rectangle">
+            <a class="btn_Exit" href="Underground_Eye.html" >  
+                <img src = "assets/img/exit.png">
+            </a>
+            <div class="rectangle_img">
+                <img src="assets/img/Tree.jpg" alt="">
+                <div class="rectangle_text">
+
+                    <div id="example">
+                        <p>
+                            Ні ні ні, так не мало статися, чому? АаААА проклята печера його ніяк вже не дістати. Досі не
+                            можу повірити все так швидко сталося... <br>Стоп. Зберися Флорій.
+                            Нам потрібно вибиратися і повідомити всіх, так що тут є, там є прохід схожий на печеру, але
+                            я ж не знаю чи він не обвалиться. О! А це що за прохід?
+                            Це водоспад! Небезпечно, але що тут, що там небезпечно тому піду...</p>
+                    </div>
+
+                    <a class="btn" href="Smerty.1.2.html">Водоспад</a>
+                    <a class="btn" href="Final.html">Тунель</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.fn.animate_Text = function () {
+                var string = this.text();
+                return this.each(function () {
+                    var $this = $(this);
+
+                    $this.html(string.replace(/./g, '<span class="new">$&</span>'));
+                    $this.find('span.new').each(function (i, el) {
+                        setTimeout(function () {
+                            $(el).addClass('div_opacity');
+                        }, 40 * i);
+                    });
+                });
+            };
+            $('#example').show();
+            $('#example').animate_Text();
+        });
+    </script>
+</body>
+
+</html>

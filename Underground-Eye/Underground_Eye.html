@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Underground_Eye</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/img/Logo.ico" type="assets/img/png">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Underground Eye</h1>
+            <div class="header_inner">
+                <div class="logo"></div>
+                <nav class="nav">
+                    <a class="nav_link" href="Underground_Eye.html">Головна</a>
+                    <a class="nav_link" href="about_us.html">Про нас</a>
+                </nav>
+            </div>        
+        </div>
+    </header>
+
+
+    <div class="content">
+        <div class="content_out">
+            <div id="example">
+                <p>Я,Голодняк Олексій Васильович, уроджинець села Гукливого,хочу Вас посвятити в загадкову легенду про наш край, яка є ЗАСНОВАНА НА РЕАЛЬНИХ ПОДІЯХ.
+                    Про загадкове озеро в горі. Щоб зануритись в цю легенду натисніть кнопку </p>
+            </div>
+        </div>
+        <div class="content_inner">
+            <a class="btn" href="Page1.html">Розпочати гру</a>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.fn.animate_Text = function () {
+                var string = this.text();
+                return this.each(function () {
+                    var $this = $(this);
+
+                    $this.html(string.replace(/./g, '<span class="new">$&</span>'));
+                    $this.find('span.new').each(function (i, el) {
+                        setTimeout(function () {
+                            $(el).addClass('div_opacity');
+                        }, 40 * i);
+                    });
+                });
+            };
+            $('#example').show();
+            $('#example').animate_Text();
+        });
+    </script>
+</body>
+
+</html>

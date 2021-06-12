@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Underground Eye</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/Girl.css">
+    <link rel="shortcut icon" href="assets/img/Logo.ico" type="assets/img/png">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="rectangle">
+            <a class="btn_Exit" href="Underground_Eye.html" >  
+                <img src = "assets/img/exit.png">
+            </a>
+            <div class="rectangle_img">
+                <img src="assets/img/girl.png" alt="">
+                <div class="rectangle_text">
+                    <div id="example">
+                        <p>Оксана: Йой дякую тобі, без тебе я б ніколи цього жеребця не завела. Дивно що він так
+                            поводиться, зазвичай він спокійний
+                            Флорій: Та не варто, завжди радий допомогти
+                            Оксана: До-речі мене звати Оксана, а вас? Як бачу ви не звідси
+                            Флорій: Мене Флорій, да я із Відня, прийшов перевірити територію, наш уряд хоче будувати тут
+                            залізницю
+                            Оксана: (дівчина напряглася) Сподіваюся ви не через онту гору тунель робити хочете (вказала
+                            вона пальцем на хребет що возвишається одразу за селом)
+                            Флорій: звичайно через цю, інакше нам потрібно класти багато обхідних залізничних шляхів,
+                            які коштуватимуть доволі дорого, а так ми зекономимо багато чого
+                            Оксана: Невже ви не чули що якщо почати порушити спокій гори, синє око гіганта відриється?
+                        </p>
+                    </div>
+                    <a class="btn" href="Grirl2.html">Далі</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.fn.animate_Text = function () {
+                var string = this.text();
+                return this.each(function () {
+                    var $this = $(this);
+
+                    $this.html(string.replace(/./g, '<span class="new">$&</span>'));
+                    $this.find('span.new').each(function (i, el) {
+                        setTimeout(function () {
+                            $(el).addClass('div_opacity');
+                        }, 40 * i);
+                    });
+                });
+            };
+            $('#example').show();
+            $('#example').animate_Text();
+        });
+    </script>
+</body>
+
+</html>

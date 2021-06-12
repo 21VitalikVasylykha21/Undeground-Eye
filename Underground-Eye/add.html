@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Underground Eye</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/History_page1.css">
+    <link rel="shortcut icon" href="assets/img/Logo.ico" type="assets/img/png">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="rectangle">
+            <a class="btn_Exit" href="Underground_Eye.html" >  
+                <img src = "assets/img/exit.png">
+            </a>
+            <div class="rectangle_img">
+                <img src="assets/img/tree.jpg" alt="">
+                <div class="rectangle_text">
+
+                    <div id="example">
+                        <p>
+                            <p>Я своїх не кидаю, вставай Тамаш!
+                                Ви продовжили йти просвічуючи шлях факелом, ви би так і далі
+                                продовжили, але невелике світло попереду вас давало надію на те
+                                шо ви зможете вийти. Слідуючи світлу ви вийшли на розлогу поляну на якій було велике
+                                озеро із криштально чистою водою, як і казала Оксана.
+                                Тим часом ваш друг Тамаш очуняв і почав оглядати місцевість, він
+                                підійшов до краю стінки печери подивися на породу і.
+                                вона розсипалася у руках.
+                                І ВСЯ ПЕРЕЧА ЗДАВАЛОСЯ ЗАРАЗ ПРОВАЛИТЬСЯ
+                                Тамаш: тут аж ніяк не можна класти залізницю, потрібно
+                                повідомити про це люд нехай укріплять підніжжя щоб нічого не
+                                завалилося.
+                                Флорій: Так але для початку потрібно вибратися. Т-ТАМАШ!
+                                Після цих слів ви побачили як ноги друга почало засмоктувати під
+                                землю, наче зибучі піски. Неподалік ви знайшли гілку, дали
+                                другові але вона зламалася і вашого друга поглинула земля</p>
+                        </p>
+                    </div>
+                    <a class="btn" href="Smerty.1.1.html">Далі</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.fn.animate_Text = function () {
+                var string = this.text();
+                return this.each(function () {
+                    var $this = $(this);
+
+                    $this.html(string.replace(/./g, '<span class="new">$&</span>'));
+                    $this.find('span.new').each(function (i, el) {
+                        setTimeout(function () {
+                            $(el).addClass('div_opacity');
+                        }, 40 * i);
+                    });
+                });
+            };
+            $('#example').show();
+            $('#example').animate_Text();
+        });
+    </script>
+</body>
+
+</html>

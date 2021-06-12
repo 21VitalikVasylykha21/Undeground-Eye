@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Underground Eye</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/History_page1.css">
+    <link rel="shortcut icon" href="assets/img/Logo.ico" type="assets/img/png">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="rectangle">
+            <a class="btn_Exit" href="Underground_Eye.html" >  
+                <img src = "assets/img/exit.png">
+            </a>
+            <div class="rectangle_img">
+                <img onclick="soundClick()" src="assets/img/hole.jpg" alt="">
+                <div class="rectangle_text">
+
+                    <div id="example">
+                        <p>СТРІМКИЙ ПОТіК ГЛИНИ, ТРАВИ, КАМЕНІВ переніс вас у непроглядну темряву...
+                            Ви прокинулись... Кожна кісточка вашого тіла боліла, насилу ви намацали кресало, яке весь
+                            час носите у кармані, знайшовши помеж каменів рюкзак, ви дістали факел та запалили його.
+                            Картина що відкрилась вам була жахливою, порода під вами провалилася, ваш друг сильно
+                            вдарився і сидить непритомний, а ваша нога зажата каменем </p>
+                    </div>
+                    <a class="btn" href="victim.html">Далі</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+     function soundClick() {
+        var audio = new Audio(); 
+        audio.src ='assets/audio/12.mp3' 
+        audio.volume = 0.6;
+        audio.autoplay = true; 
+        }
+        $(document).ready(function () {
+            $.fn.animate_Text = function () {
+                var string = this.text();
+                return this.each(function () {
+                    var $this = $(this);
+
+                    $this.html(string.replace(/./g, '<span class="new">$&</span>'));
+                    $this.find('span.new').each(function (i, el) {
+                        setTimeout(function () {
+                            $(el).addClass('div_opacity');
+                        }, 40 * i);
+                    });
+                });
+            };
+            $('#example').show();
+            $('#example').animate_Text();
+        });
+    </script>
+</body>
+
+</html>

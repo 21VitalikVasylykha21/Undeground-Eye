@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Underground Eye</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/History_page1.css">
+    <link rel="shortcut icon" href="assets/img/Logo.ico" type="assets/img/png">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="rectangle">
+            <a class="btn_Exit" href="Underground_Eye.html" >  
+                <img src = "assets/img/exit.png">
+            </a>
+            <div class="rectangle_img">
+                <img onclick="soundClick()" src="assets/img/men_kow.jpg" alt="">
+                <div class="rectangle_text">
+
+                    <div id="example">
+                        <p>Тамаш: Йо але будь обережним я чув тут такє...
+                            Місцевий пастух розказав мені що недавно тут чоловіком стався не щастий случай
+                            і все це через те що він на Великдень пішов на свою поляну орати із волами землю
+                            а для православного люду це великих гріх тому Бог його покарав... Його разом із волами і
+                            плугом
+                            замкотало в середину гори і більше його ніхто не бачив, лише затянуга воронка у землі
+                            нагадувала про цю історію
+
+                            Флорій: Це все звичайно страшно, але я в подібні дурниці не вірю, тому мене таким не
+                            залякаєш.</p>
+                    </div>
+
+                    <a class="btn" href="Page_2_Kotyshnja.html">Далі</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+     function soundClick() {
+        var audio = new Audio(); 
+        audio.src ='assets/audio/2.mp3' 
+        audio.volume = 0.6;
+        audio.autoplay = true; 
+        }
+        $(document).ready(function () {
+            $.fn.animate_Text = function () {
+                var string = this.text();
+                return this.each(function () {
+                    var $this = $(this);
+
+                    $this.html(string.replace(/./g, '<span class="new">$&</span>'));
+                    $this.find('span.new').each(function (i, el) {
+                        setTimeout(function () {
+                            $(el).addClass('div_opacity');
+                        }, 40 * i);
+                    });
+                });
+            };
+            $('#example').show();
+            $('#example').animate_Text();
+        });
+    </script>
+</body>
+
+</html>

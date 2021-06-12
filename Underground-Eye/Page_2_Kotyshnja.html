@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Underground Eye</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/Horse.css">
+    <link rel="shortcut icon" href="assets/img/Logo.ico" type="assets/img/png">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="rectangle">
+            <a class="btn_Exit" href="Underground_Eye.html" >  
+                <img src = "assets/img/exit.png">
+            </a>
+            <div class="rectangle_img">
+                <img onclick="soundClick()"src="assets/img/horse.jpg" alt="">
+                <div class="rectangle_text">
+
+                    <div id="example">
+                        <p>Кінський візок із скрипучим тріском колес приїхав, випускаєчи своїх пасажирів. Перед вами
+                            відкрився краєвид на невелике село, де всі наче жили просто і мали власне господарство.
+                            (Господи, нарешті я прибув сюди! І що ж тут такого особливого, невже не знайшлося кращого
+                            місця для роботи?)
+                            Тамаш: Флоріане! Що стоїш? Ану ж бо відведи коня у стійло</p>
+                    </div>
+
+                    <a class="btn" href="Horse.html">Добре йду я, не кричи старий</a>
+                    <a class="btn" href="Dot2.3.html">Сам відведи я взагаліто інженер, а не конюх нещасний</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+     function soundClick() {
+        var audio = new Audio(); 
+        audio.src ='assets/audio/3.mp3' 
+        audio.volume = 0.6;
+        audio.autoplay = true; 
+        }
+        $(document).ready(function () {
+            $.fn.animate_Text = function () {
+                var string = this.text();
+                return this.each(function () {
+                    var $this = $(this);
+
+                    $this.html(string.replace(/./g, '<span class="new">$&</span>'));
+                    $this.find('span.new').each(function (i, el) {
+                        setTimeout(function () {
+                            $(el).addClass('div_opacity');
+                        }, 40 * i);
+                    });
+                });
+            };
+            $('#example').show();
+            $('#example').animate_Text();
+        });
+    </script>
+</body>
+
+</html>

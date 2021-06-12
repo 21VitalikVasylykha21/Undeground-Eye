@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Underground Eye</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/History_page1.css">
+    <link rel="shortcut icon" href="assets/img/Logo.ico" type="assets/img/png">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="rectangle">
+            <a class="btn_Exit" href="Underground_Eye.html" >  
+                <img src = "assets/img/exit.png">
+            </a>
+            <div class="rectangle_img">
+                <img onclick="soundClick()" src="assets/img/page1.jpg" alt="">
+                <div class="rectangle_text">
+
+                    <div id="example">
+                        <p>Це було 17 століття, сучасна Закарпацька область була під володінням
+                            Австрійської-Угорсьої імперії...<br>Невелике село вкрите густими чагарниками і
+                            непрохідними
+                            лісами крило в собі незвичайну
+                            таємницю...<br>- Боже, чому саме мене відправили у це місце Богом забуте село, а головне
+                            навіщо щоб
+                            просто
+                            повернутися і сказати майору що тут безпечно
+                            (хто мене не знає я Фроліан я австрійський інженер-геодезист, мене прислали у Гукливий
+                            щоб
+                            перевірити місце для нового залізничного шляху)
+
+                            Тамаш: Чого розкисаємо юначе? - вивів Фроліана з роздумів його товариш - Невже ніяка
+                            місцева
+                            дівиця не задурманила тебе?</p>
+                    </div>
+
+                    <a class="btn" href="Dot1.1.3.html">Відв’яжись старий, я по роботі зараз, не до романів мені</a>
+                    <a class="btn" href="Page1_rigth.html">Поки не знайшов, але скоро знаду собі якусь дівицю</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+     function soundClick() {
+        var audio = new Audio(); 
+        audio.src ='assets/audio/1.mp3' 
+        audio.volume = 0.6;
+        audio.autoplay = true; 
+        }
+        $(document).ready(function () {
+            $.fn.animate_Text = function () {
+                var string = this.text();
+                return this.each(function () {
+                    var $this = $(this);
+
+                    $this.html(string.replace(/./g, '<span class="new">$&</span>'));
+                    $this.find('span.new').each(function (i, el) {
+                        setTimeout(function () {
+                            $(el).addClass('div_opacity');
+                        }, 40 * i);
+                    });
+                });
+            };
+            $('#example').show();
+            $('#example').animate_Text();
+        });
+    </script>
+</body>
+
+</html>
